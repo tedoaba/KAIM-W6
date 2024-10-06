@@ -11,53 +11,41 @@ with open('model.pkl', 'rb') as model_file:
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        # Get form data
-        store = int(request.form['Store'])
-        day_of_week = int(request.form['DayOfWeek'])
-        customers = int(request.form['Customers'])
-        open_store = int(request.form['Open'])
-        promo = int(request.form['Promo'])
-        state_holiday = int(request.form['StateHoliday'])
-        school_holiday = int(request.form['SchoolHoliday'])
-        store_type = int(request.form['StoreType'])
-        assortment = int(request.form['Assortment'])
-        competition_distance = float(request.form['CompetitionDistance'])
-        competition_open_since_month = int(request.form['CompetitionOpenSinceMonth'])
-        competition_open_since_year = int(request.form['CompetitionOpenSinceYear'])
-        promo2 = int(request.form['Promo2'])
-        promo2_since_week = int(request.form['Promo2SinceWeek'])
-        promo2_since_year = int(request.form['Promo2SinceYear'])
-        promo_interval = int(request.form['PromoInterval'])
-        day = int(request.form['Day'])
-        week_of_year = int(request.form['WeekOfYear'])
-        month = int(request.form['Month'])
-        year = int(request.form['Year'])
-        is_weekend = int(request.form['IsWeekend'])
-        is_beginning_of_month = int(request.form['IsBeginningOfMonth'])
-        is_mid_month = int(request.form['IsMidMonth'])
-        is_end_of_month = int(request.form['IsEndOfMonth'])
+        # Get form data for the new columns
+        transaction_id = int(request.form['TransactionId'])
+        batch_id = int(request.form['BatchId'])
+        account_id = int(request.form['AccountId'])
+        subscription_id = int(request.form['SubscriptionId'])
+        customer_id = int(request.form['CustomerId'])
+        currency_code = request.form['CurrencyCode']  # Assume string
+        country_code = request.form['CountryCode']  # Assume string
+        provider_id = int(request.form['ProviderId'])
+        product_id = int(request.form['ProductId'])
+        product_category = request.form['ProductCategory']  # Assume string
+        channel_id = int(request.form['ChannelId'])
+        amount = float(request.form['Amount'])
+        value = float(request.form['Value'])
+        transaction_start_time = request.form['TransactionStartTime']  # Keep as string or datetime, depends on format
+        pricing_strategy = request.form['PricingStrategy']  # Assume string
+        fraud_result = int(request.form['FraudResult'])
 
         # Prepare input for the model
-        input_features = np.array([[store, day_of_week, customers, open_store, promo, state_holiday,
-                                    school_holiday, store_type, assortment, competition_distance,
-                                    competition_open_since_month, competition_open_since_year, promo2,
-                                    promo2_since_week, promo2_since_year, promo_interval, day,
-                                    week_of_year, month, year, is_weekend, is_beginning_of_month,
-                                    is_mid_month, is_end_of_month]])
+        input_features = np.array([[transaction_id, batch_id, account_id, subscription_id, customer_id,
+                                    currency_code, country_code, provider_id, product_id, product_category,
+                                    channel_id, amount, value, pricing_strategy,
+                                    fraud_result]])
 
         # Make prediction
         prediction = model.predict(input_features)[0]
 
         # Render the result.html template
-        return render_template('result.html', store=store, day_of_week=day_of_week, customers=customers,
-                               open_store=open_store, promo=promo, state_holiday=state_holiday,
-                               school_holiday=school_holiday, store_type=store_type, assortment=assortment,
-                               competition_distance=competition_distance, competition_open_since_month=competition_open_since_month,
-                               competition_open_since_year=competition_open_since_year, promo2=promo2,
-                               promo2_since_week=promo2_since_week, promo2_since_year=promo2_since_year,
-                               promo_interval=promo_interval, day=day, week_of_year=week_of_year, month=month,
-                               year=year, is_weekend=is_weekend, is_beginning_of_month=is_beginning_of_month,
-                               is_mid_month=is_mid_month, is_end_of_month=is_end_of_month, prediction=prediction)
+        return render_template('result.html', transaction_id=transaction_id, batch_id=batch_id,
+                               account_id=account_id, subscription_id=subscription_id, customer_id=customer_id,
+                               currency_code=currency_code, country_code=country_code, provider_id=provider_id,
+                               product_id=product_id, product_category=product_category, channel_id=channel_id,
+                               amount=amount, value=value, transaction_start_time=transaction_start_time,
+                               pricing_strategy=pricing_strategy, fraud_result=fraud_result,
+                               prediction=prediction)
 
     return render_template('index.html')
 
