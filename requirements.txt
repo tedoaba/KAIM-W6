@@ -4,3 +4,7 @@ pandas
 scikit-learn
 scipy
 seaborn
+xverse
+sidetable
+scorecardpy
+monotonic-binning
