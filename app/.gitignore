@@ -1,2 +1,3 @@
 # NPM files
 node_modules/
+.vercel

@@ -62,3 +62,42 @@ def preprocess_transactions(df):
     X = final_df.drop(['TransactionId', 'CustomerId', 'TransactionStartTime'], axis=1)
 
     return X
+
+
+import gdown
+import pickle
+import os
+
+def download_file_from_google_drive(file_id, destination):
+    """
+    Downloads a file from Google Drive using gdown.
+
+    Args:
+        file_id (str): The Google Drive file ID.
+        destination (str): The local file path where the downloaded file will be saved.
+    """
+    url = f"https://drive.google.com/uc?id={file_id}"
+    
+    # Use gdown to download the file from Google Drive
+    gdown.download(url, destination, quiet=False)
+
+
+def load_model():
+    """
+    Checks if the model file exists locally. If not, downloads it from Google Drive.
+
+    Returns:
+        The loaded model object.
+    """
+    model_path = 'xgb_model.pkl'
+    
+    # If the model doesn't exist locally, download it
+    if not os.path.exists(model_path):
+        file_id = '1A2B3C4D5EF6GHIJKL'  # Replace with your actual file ID from Google Drive
+        download_file_from_google_drive(file_id, model_path)
+
+    # Load the model using pickle
+    with open(model_path, 'rb') as f:
+        model = pickle.load(f)
+    
+    return model
