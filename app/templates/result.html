@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
+    <title>Prediction Result</title>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto py-10">
+        <h1 class="text-2xl font-bold text-center mb-5">Prediction Result</h1>
+
+        <table class="min-w-full bg-white border-collapse">
+            <thead>
+                <tr>
+                    <th class="py-2 px-4 bg-blue-200">Field</th>
+                    <th class="py-2 px-4 bg-blue-200">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border px-4 py-2">Transaction ID</td>
+                    <td class="border px-4 py-2">{{ transaction_id }}</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">Batch ID</td>
+                    <td class="border px-4 py-2">{{ batch_id }}</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">Account ID</td>
+                    <td class="border px-4 py-2">{{ account_id }}</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">Subscription ID</td>
+                    <td class="border px-4 py-2">{{ subscription_id }}</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">Customer ID</td>
+                    <td class="border px-4 py-2">{{ customer_id }}</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">Currency Code</td>
+                    <td class="border px-4 py-2">{{ currency_code }}</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">Country Code</td>
+                    <td class="border px-4 py-2">{{ country_code }}</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">Provider ID</td>
+                    <td class="border px-4 py-2">{{ provider_id }}</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">Product ID</td>
+                    <td class="border px-4 py-2">{{ product_id }}</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">Product Category</td>
+                    <td class="border px-4 py-2">{{ product_category }}</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">Channel ID</td>
+                    <td class="border px-4 py-2">{{ channel_id }}</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">Amount</td>
+                    <td class="border px-4 py-2">{{ amount }}</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">Value</td>
+                    <td class="border px-4 py-2">{{ value }}</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">Transaction Start Time</td>
+                    <td class="border px-4 py-2">{{ transaction_start_time }}</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">Pricing Strategy</td>
+                    <td class="border px-4 py-2">{{ pricing_strategy }}</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2 font-bold">Prediction</td>
+                    <td class="border px-4 py-2 font-bold">{{ prediction }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="text-center mt-5">
+            <a href="/" class="text-blue-500 underline">Go Back</a>
+        </div>
+    </div>
+</body>
+</html>

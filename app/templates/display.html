@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
+    <title>Display Data</title>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto py-10">
+        <h1 class="text-2xl font-bold text-center mb-5">Transaction Data</h1>
+        <table class="min-w-full bg-white border-collapse">
+            <thead>
+                <tr>
+                    <th class="py-2 px-4 bg-blue-200">Transaction ID</th>
+                    <th class="py-2 px-4 bg-blue-200">Batch ID</th>
+                    <th class="py-2 px-4 bg-blue-200">Account ID</th>
+                    <th class="py-2 px-4 bg-blue-200">Subscription ID</th>
+                    <th class="py-2 px-4 bg-blue-200">Customer ID</th>
+                    <th class="py-2 px-4 bg-blue-200">Currency Code</th>
+                    <th class="py-2 px-4 bg-blue-200">Country Code</th>
+                    <th class="py-2 px-4 bg-blue-200">Provider ID</th>
+                    <th class="py-2 px-4 bg-blue-200">Product ID</th>
+                    <th class="py-2 px-4 bg-blue-200">Product Category</th>
+                    <th class="py-2 px-4 bg-blue-200">Channel ID</th>
+                    <th class="py-2 px-4 bg-blue-200">Amount</th>
+                    <th class="py-2 px-4 bg-blue-200">Value</th>
+                    <th class="py-2 px-4 bg-blue-200">Transaction Start Time</th>
+                    <th class="py-2 px-4 bg-blue-200">Pricing Strategy</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border px-4 py-2">{{ transactionid }}</td>
+                    <td class="border px-4 py-2">{{ batchid }}</td>
+                    <td class="border px-4 py-2">{{ accountid }}</td>
+                    <td class="border px-4 py-2">{{ subscriptionid }}</td>
+                    <td class="border px-4 py-2">{{ customerid }}</td>
+                    <td class="border px-4 py-2">{{ currencycode }}</td>
+                    <td class="border px-4 py-2">{{ countrycode }}</td>
+                    <td class="border px-4 py-2">{{ providerid }}</td>
+                    <td class="border px-4 py-2">{{ productid }}</td>
+                    <td class="border px-4 py-2">{{ productcategory }}</td>
+                    <td class="border px-4 py-2">{{ channelid }}</td>
+                    <td class="border px-4 py-2">{{ amount }}</td>
+                    <td class="border px-4 py-2">{{ value }}</td>
+                    <td class="border px-4 py-2">{{ transactionstarttime }}</td>
+                    <td class="border px-4 py-2">{{ pricingstrategy }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

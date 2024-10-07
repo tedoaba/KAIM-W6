@@ -4,7 +4,9 @@ pandas
 scikit-learn
 scipy
 seaborn
+joblib
 xverse
 sidetable
 scorecardpy
 monotonic-binning
+
