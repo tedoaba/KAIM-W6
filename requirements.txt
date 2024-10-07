@@ -6,3 +6,7 @@ scipy
 seaborn
 joblib
 gdown
+xverse
+sidetable
+scorecardpy
+monotonic-binning
