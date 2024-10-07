@@ -1,13 +1,13 @@
 from flask import Flask, render_template, request
 import pickle
 import pandas as pd
-from data_preprocess import preprocess_transactions
+from data_preprocess import preprocess_transactions, load_model
 
 app = Flask(__name__)
 
-# Load the machine learning model
-with open('xgb_model.pkl', 'rb') as model_file:
-    model = pickle.load(model_file)
+# Load the model when starting the app
+model = load_model()
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
