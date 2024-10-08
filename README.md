@@ -15,9 +15,9 @@ The project is divided into several tasks, from **exploratory data analysis** to
 
 ├── data/                       
 ├── notebooks/                  
-│   ├── kaim-week6-task-2.ipynb         
+│   ├── kaim-week6-task-3-1.ipynb         
 │   ├── kaim-week6-task-3.ipynb         
-│   ├── kaim-week6-task-4.ipynb         
+│   ├── kaim-week6-task-3-woe.ipynb         
 ├── src/  
 │   ├── load_data.py                 
 │   ├── eda.py
@@ -69,15 +69,6 @@ Dependencies include:
 
 ## Tasks Breakdown
 
-### **Task 2: Exploratory Data Analysis (EDA)**
-
-- Dataset structure overview.
-- Summary statistics for numerical and categorical variables.
-- Visualization of distributions and correlations.
-- Identifying missing values and outliers.
-
-> Notebook: [task2_EDA.ipynb](notebooks/kaim-week6-task-2.ipynb)
-
 ### **Task 3: Feature Engineering**
 
 - Creation of aggregate features like `TotalTransactionAmount`, `TransactionCount`, and `SpendScore`.
@@ -94,65 +85,6 @@ Dependencies include:
 - Applying **Weight of Evidence (WoE)** binning for better interpretability of key features.
 
 > Notebook: [task3_extended_woe_binning.ipynb](notebooks/kaim-week6-task-3-woe.ipynb)
-
-### **Task 4: Model Selection and Training**
-
-- Training and evaluation of models: **Logistic Regression, Decision Trees, Random Forest, Gradient Boosting**.
-- Hyperparameter tuning using **Grid Search** for Random Forest and Gradient Boosting.
-- Evaluation metrics include **Accuracy, Precision, Recall, F1 Score, ROC-AUC**, and confusion matrix.
-
-> Notebook: [task4_modelling.ipynb](notebooks/kaim-week6-task-4.ipynb)
-
-
-## Model Deployment
-
-The model is deployed using **Flask** on **Render**, enabling real-time credit scoring predictions via an API. The deployed model takes transaction data and outputs a classification (Good/Bad risk) or a default probability score.
-
-### Deployment Folder Structure
-
-The `app/` directory contains files required for deployment:
-- **main.py**: The Flask web application that serves the trained model.
-- **xgb_model.pkl**: The trained model saved as a pickle file.
-- **requirements.txt**: Lists the necessary libraries for deployment.
-
-### Running Locally
-
-To run the Flask app locally:
-
-1. **Navigate to the `app/` directory**:
-   ```bash
-   cd app
-   ```
-
-2. **Install app-specific dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Run the Flask app**:
-   ```bash
-   python app.py
-   ```
-
-4. The API will be hosted locally at `http://127.0.0.1:5000/`.
-
-### Deployed on Render
-
-The model is deployed live on Render for real-time predictions. You can send transaction data to the endpoint and get predictions on credit risk. The URL will look something like this:
-
-```bash
-https://kaim-w6.onrender.com/
-```
-
-### API Endpoints
-
-
-## Results and Outputs
-
-Results from model evaluation, such as confusion matrices, performance metrics, and hyperparameter tuning results, are saved in the `results/` directory. This includes:
-- **Accuracy, Precision, Recall, F1 Scores** for each model.
-- **Feature importance plots** that show key features influencing predictions.
-- **Confusion matrices** to visualize classification errors.
 
 ## How to Run Notebooks
 
