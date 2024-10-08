@@ -8,6 +8,7 @@ This repository contains all the necessary notebooks, scripts, and resources req
 
 The project is divided into several tasks, from **exploratory data analysis** to **model deployment** on **Render**.
 
+### **Check it out yourself:** [Deployed API](https://kaim-w6.onrender.com/)
 
 ## Folder Structure
 
