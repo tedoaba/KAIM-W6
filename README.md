@@ -1,8 +1,8 @@
-# KAIM Week 6 Challenges
+# Credit Scoring Model in e-commerce for Buy-now-pay-later services
 
-## Credit Scoring Model Development
+## KAIM Week 6 Challenges
 
-## Overview
+## Project Overview
 
 This repository contains all the necessary notebooks, scripts, and resources required to build and deploy a **Credit Scoring Model** for Bati Bank. The model assesses credit risk, predicts fraudulent transactions, and classifies users based on their likelihood of default. The entire workflow adheres to **Basel II regulatory standards** and uses advanced machine learning techniques and feature engineering.
 
